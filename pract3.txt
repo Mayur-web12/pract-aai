@@ -1,0 +1,72 @@
+Practical No. 3
+Aim
+To create a chatbot using an advanced Transformer-based pre-trained language model for generating conversational responses.
+Requirements
+- Python
+- Transformers library
+- Pre-trained Transformer model
+- Internet connection for downloading the model the first time
+Steps / Procedure
+1. Import the pipeline function from the Transformers library.
+2. Load the pre-trained DialoGPT-medium Transformer model using a text-generation pipeline.
+3. Display a welcome message to the user.
+4. Take input from the user.
+5. Check whether the user has entered "exit".
+6. If the user enters "exit", end the conversation.
+7. Otherwise, send the user's input to the Transformer model.
+8. Generate a response using the model.
+9. Display the generated response.
+10. Continue the conversation until the user enters "exit".
+
+# Program
+from transformers import pipeline
+
+# Step 1: Load a Pre-trained Transformer Model
+chatbot = pipeline(
+    "text-generation",
+    model="microsoft/DialoGPT-medium"
+)
+
+# Step 2: Start a Chat Session
+print("Chatbot: Hello! I'm here to chat with you.")
+print("Type 'exit' to end the conversation.")
+
+# Step 3: Loop for Chatting
+while True:
+    user_input = input("You: ")
+
+    if user_input.lower() == "exit":
+        print("Chatbot: Goodbye!")
+        break
+
+    # Generate a Response
+    response = chatbot(
+        user_input,
+        max_length=50,
+        num_return_sequences=1
+    )
+
+    print("Chatbot:", response[0]["generated_text"])
+
+# Expected Output
+The exact response will depend on the model, but it may look like:
+Chatbot: Hello! I'm here to chat with you.
+Type 'exit' to end the conversation.
+
+You: Hello
+Chatbot: Hello! How are you?
+
+You: I am fine.
+Chatbot: That's good to hear!
+
+You: What are you doing?
+Chatbot: I'm just here chatting with you.
+
+You: exit
+Chatbot: Goodbye!
+
+Important: The chatbot's responses can be different each time, so don't memorize the exact output.
+
+# Result
+The Transformer-based chatbot was successfully implemented
+using the pre-trained DialoGPT model and was able to generate responses to user inputs.
