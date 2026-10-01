@@ -1,12 +1,14 @@
 Practical No. 3
-Aim
+# Aim
 To create a chatbot using an advanced Transformer-based pre-trained language model for generating conversational responses.
-Requirements
+
+# Requirements
 - Python
 - Transformers library
 - Pre-trained Transformer model
 - Internet connection for downloading the model the first time
-Steps / Procedure
+
+# Steps / Procedure
 1. Import the pipeline function from the Transformers library.
 2. Load the pre-trained DialoGPT-medium Transformer model using a text-generation pipeline.
 3. Display a welcome message to the user.
