@@ -1,0 +1,70 @@
+#Practical No. 5 — Object Detection using YOLO
+
+#Aim
+To implement an object detection system using the YOLO (You Only Look Once) model and OpenCV to detect and display objects in an image.
+
+#Requirements
+- Python 3.8.10
+- Ultralytics
+- YOLOv8
+- OpenCV
+- YOLO model weights (yolov8n.pt)
+- Input image
+
+#Steps / Procedure
+1. Install the required Python libraries.
+2. Import YOLO from the Ultralytics library and cv2 from OpenCV.
+3. Load the pre-trained YOLOv8 model.
+4. Provide the path of the input image.
+5. Pass the image to the YOLO model for object detection.
+6. Get the detection results from the model.
+7. Draw bounding boxes and labels on the detected objects.
+8. Resize the processed image for display.
+9. Display the detected image using OpenCV.
+10. Wait for a key press and close the OpenCV window.
+
+#Program
+# python -m pip install ultralytics opencv-python
+#python -c "from ultralytics import YOLO; import cv2; print('Everything installed correctly')"
+
+from ultralytics import YOLO
+from ultralytics import YOLO
+
+
+import cv2
+
+# Step 1: Load the YOLO model
+model = YOLO("../yolov8n.pt")
+
+# Step 2: Process the image
+results = model("../aai/woman-2.png")
+
+# Step 3: Draw detection results
+image = results[0].plot()
+
+# Step 4: Resize the image
+resized_image = cv2.resize(image, (800, 800))
+
+# Step 5: Create OpenCV window
+cv2.namedWindow("Processed Image", cv2.WINDOW_NORMAL)
+
+# Step 6: Resize the window
+cv2.resizeWindow(
+    "Processed Image",
+    resized_image.shape[1],
+    resized_image.shape[0]
+)
+
+# Step 7: Display the image
+cv2.imshow("Processed Image", resized_image)
+
+# Step 8: Wait and close
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# Expected Output
+The input image will be displayed with bounding boxes and labels around detected objects.
+
+# Result
+The YOLO-based object detection system was successfully 
+implemented using Python and OpenCV, and objects were detected and displayed with bounding boxes.
