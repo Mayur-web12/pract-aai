@@ -1,7 +1,7 @@
 Practical: Implement RNN using TensorFlow
 
 # Aim
-To implement a Recurrent Neural Network (RNN) using Python and TensorFlow for sentiment classification of IMDb movie reviews.
+Implementing advanced deep learning algorithms such as convolutional neural networks (CNNs) or recurrent neural networks (RNNs) using Python libraries like TensorFlow or PyTorch.
 
 # Requirements
 - Python
