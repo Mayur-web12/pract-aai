@@ -1,7 +1,7 @@
 Practical No. 2 — NLP Sentiment Analysis
 
 # Aim
-To build an NLP model using a pre-trained Transformer model for sentiment analysis and classify text as positive or negative.
+Building a natural language processing (NLP) model for sentiment analysis or text classification.
 
 # Requirements
 - Python
